@@ -1,0 +1,46 @@
+<div class="card border-primary">
+  <div class="card-header text-white bg-primary">List des contacts</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="form-group">
+        <label for="">Mot Clé</label>
+        <input type="text" [(ngModel)]="filter" name="" id="" />
+        <button class="btn btn-primary" (click)="doFind()">Chercher</button>
+      </div>
+    </div>
+    <div class="row">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <th>Photo</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Date Naissance</th>
+          <th>E-mail</th>
+          <th>Telephone</th>
+        </thead>
+        <tbody *ngFor="let contact of contacts">
+          <tr>
+            <td>{{ contact.photo }}</td>
+            <td>{{ contact.nom }}</td>
+            <td>{{ contact.prenom }}</td>
+            <td>{{ contact.dateNaissance }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.tel }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <ul class="nav nav-pills">
+        <li *ngFor="let p of pages; let i = index">
+          <a
+            class="nav-link"
+            [ngClass]="{ active: i == page }"
+            (click)="goto(i)"
+            >{{ i + 1 }}</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
