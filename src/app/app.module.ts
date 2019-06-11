@@ -8,9 +8,10 @@ import { ContactsService } from "./services/contacts.service";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { NewContactComponent } from './new-contact/new-contact.component';
+import { NouveauContactComponent } from './nouveau-contact/nouveau-contact.component';
 
 @NgModule({
-  declarations: [AppComponent, ContactsComponent, NewContactComponent],
+  declarations: [AppComponent, ContactsComponent, NewContactComponent, NouveauContactComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [ContactsService],
   bootstrap: [AppComponent]
